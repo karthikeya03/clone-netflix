@@ -1,0 +1,300 @@
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #141414; /* Primary color */
+  color: #F3F3F3; /* Light color */
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+header {
+  padding: 20px 20px 0 20px;
+  position: fixed;
+  top: 0;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: 
+   "nt mn mn sb . . . "; 
+  background-color: #141414; /* Primary color */
+  width: 100%;
+  margin-bottom: 0px;
+  z-index: 100;
+}
+
+.location {
+  transition: 0.5s;
+}
+
+.netflixLogo {
+  grid-area: nt;
+  object-fit: cover;
+  width: 100px;
+  max-height: 100%;
+  padding-left: 30px;
+  padding-top: 0px;  
+}
+
+.netflixLogo img {  
+  height: 35px;     
+}
+
+#logo {
+  color: #E50914; /* Red color for logo */
+  margin: 0; 
+  padding: 0; 
+}
+
+.main-nav {
+  grid-area: mn;
+  padding: 0 30px 0 320px;
+}
+
+.main-nav a {
+  color: #F3F3F3; /* Light color for main navigation links */
+  text-decoration: none;
+  margin: 5px;  
+}
+
+.main-nav a:hover {
+  color: red; /* Red color on hover for main navigation links */
+  font-size: 35px;
+  transition: 0.7s;
+}
+
+.hov {
+  display: flex;
+  width: 50vh;
+  padding-top: 0;  /* Remove top padding */
+  padding-bottom: 0;  /* Remove bottom padding */
+  margin-bottom: 20px; /* Add margin-bottom for spacing */
+}
+
+.hov:hover {
+  color: red; /* Red color on hover for sub navigation links */
+  cursor: pointer;
+  transition: 1s;
+}
+
+.sub-nav {
+  grid-area: sb;
+  padding: 0 40px 0 40px;
+}
+
+.sub-nav a {
+  color: white; /* White color for sub navigation links */
+  text-decoration: none;
+  margin: 5px;
+}
+
+.sub-nav a:hover {
+  color: red; /* Red color on hover for sub navigation links */
+  font-size: 25px;
+  transition: 0.5s;
+}
+
+.sub-nav-logo {
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+  padding: 50px;
+}
+
+.box {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+.box a {
+  transition: transform 0.5s; /* Transition for smooth scale effect */
+}
+
+.box a:hover {
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);  
+  transform: scale(1.4);
+}
+
+.box img {
+  border-radius: 2px;
+}
+
+/* LINKS */
+.link {
+  padding: 50px;
+}
+
+.sub-links ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sub-links a {
+  color: #686868; /* Dark color for links */
+  text-decoration: none;
+}
+
+.sub-links a:hover {
+  color: red; /* Red color on hover for links */
+  transition: 0.5s;
+}
+
+.logos a {
+  padding: 10px;
+}
+
+.logo {
+  color: #686868; /* Dark color for logo */
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: red; /* Red color for footer text */
+}
+
+.f1:hover {
+  color: white;
+}
+
+.f2:hover {
+  color: white;
+}
+
+/* MEDIA QUERIES */
+@media(max-width: 900px) {
+
+  header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "nt nt nt  .  .  . sb . . . "
+    "mn mn mn mn mn mn  mn mn mn mn";
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+}
+
+@media(max-width: 700px) {
+
+  header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "nt nt nt  .  .  . sb . . . "
+    "mn mn mn mn mn mn  mn mn mn mn";
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+   
+}
+
+@media(max-width: 500px) {
+
+  .wrapper {
+    font-size: 15px;
+  }
+
+  header {
+    margin: 0;
+    padding: 20px 0 0 0;
+    position: fixed;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+    "nt"    
+    "mn"
+    "sb";
+    text-align: center;
+  }
+
+  .netflixLogo {
+    max-width: 100%;
+    margin: auto;
+    padding-right: 20px;
+  }
+
+  .main-nav {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;    
+  }
+
+  .box a:hover {
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);  
+    transform: scale(1.2);
+  }
+
+  .logos {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    font-size: 15px;
+  }  
+}
+
+/* Scroll margin for anchor links */
+.hov {
+  scroll-margin-top: 80px; /* Adjust this value based on the height of your fixed header */
+}
